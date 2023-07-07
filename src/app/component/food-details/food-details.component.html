@@ -21,7 +21,7 @@
     </div>
 
        </div> -->
-       <div class="card">
+       <div class="card md:w-[900px] md:h-[500px] w-[300px] h-[500px] md:absolute md:top-[30%] md:left-[30%]">
         <div class="content ">
           <div class="front flex flex-col justify-center z-40 rounded-tr-full  ">
             <img class=" h-4/5 w-full object-contain bg-transparent z-10 " src="{{foods.recipe.image}}" alt="">
@@ -30,31 +30,31 @@
      <h1 class="text-2xl text-white ">{{foods.recipe.label}}</h1>
             </div>
           </div>
-          <div class="back  bg-gradient-to-r from-indigo-500 ">
-<h1 class="text-3xl">Ingriendents</h1>
-<div class="max-h-[250px]  overflow-y-auto  text-xl flex  flex-col items-start justify-center md:pl-8 md:mt-4  ">
+          <div class="back md:w-[900px] md:h-[550px]  w-[300px] h-[500px] bg-gradient-to-r from-indigo-500 ">
+<h1 class="md:text-3xl text-2xl my-4 md:my-0">Ingriendents</h1>
+<div class="md:max-h-[250px] pl-1 max-h-[150px]   overflow-y-auto  text-xl flex  flex-col items-start justify-center md:pl-8 md:mt-4  ">
    <li class="list-outside" *ngFor="let items of foods.recipe.ingredientLines">{{items}}</li>
 </div>
 <div class=" flex text-2xl justify-center">
   <h1>Details</h1>
 </div>
-  <div class="flex items-center justify-start gap-2 md:pl-11">
+  <div class="flex items-center justify-start gap-2 pl-2 md:pl-11">
     <span class="my-4 text-base font-semibold w-fit">Cuisine type →</span>
     <p class="text-xl" *ngFor="let itemC of foods.recipe.cuisineType"> {{itemC}}</p>
   </div>
-  <div class="flex items-center justify-start md:pl-11">
+  <div class="flex items-center justify-start pl-2 md:pl-11">
     <span class="my-4 text-base font-semibold w-fit">Meal type →</span>
     <p class="text-xl">{{foods.recipe.mealType[0]}}</p>
 
   </div>
-  <div class=" flex text-2xl justify-center">
-    <button class=" text-2xl">
+  <div class=" flex md:text-2xl text-xl justify-center">
+    <button class=" md:text-2xl text-xl ">
       <a href="{{ foods.recipe.url }}">How to Cook ? <span class="font-semibold text-blue-400">Click
           Here!</span></a>
     </button>
   </div>
   <div class="flex justify-center">
-    <button class="text-white bg-blue-700 mt-12 rounded-xl w-1/5 text-2xl p-3" routerLink="/">
+    <button class="text-white bg-blue-700 md:mt-12  mt-6 rounded-xl md:w-1/5 w-2/3  md:text-2xl text-lg md:p-3 p-1" routerLink="/">
       Back to Home
     </button>
   </div>
