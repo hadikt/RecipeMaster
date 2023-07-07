@@ -1,0 +1,64 @@
+
+<div class="w-screen h-screen z-10 relative bg-black flex items-center justify-center">
+  <img class="w-full h-full object-fill absolute opacity-30" src="{{foods.recipe.image}}" alt="">
+  <!-- <div class="cardBox ">
+    <div class="card relative md:w-[600px] rounded-md ">
+      <div class="w-full h-full absolute rounded-md ">
+        <img class="w-full rounded-md  h-full object-contain" src="{{foods.recipe.image}}" alt="">
+      </div>
+      <div class="front flex rounded-md   align-bottom font-serif my-96 space-y-3">
+        <h3 class="flex-row text-black pl-2 pr-2 text-3xl  z-40font-bold  z-10">{{foods.recipe.label}}</h3>
+        <button class="text-black bg-slate-50 p-1 rounded-3xl mx-80 "><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
+        </svg>
+        </button>
+      </div>
+      <div class="back">
+        <h3>Back Side One</h3>
+        <p>Content in card one</p>
+        <a href="#">Button 1</a>
+      </div>
+    </div>
+
+       </div> -->
+       <div class="card">
+        <div class="content ">
+          <div class="front flex flex-col justify-center z-40 rounded-tr-full  ">
+            <img class=" h-4/5 w-full object-contain bg-transparent z-10 " src="{{foods.recipe.image}}" alt="">
+            <!-- <h1 class="bg-yellow-200 h-4/5 w-full"></h1> -->
+            <div class=" flex items-center justify-center h-28 w-full ">
+     <h1 class="text-2xl text-white ">{{foods.recipe.label}}</h1>
+            </div>
+          </div>
+          <div class="back  bg-gradient-to-r from-indigo-500 ">
+<h1 class="text-3xl">Ingriendents</h1>
+<div class="max-h-[250px]  overflow-y-auto  text-xl flex  flex-col items-start justify-center md:pl-8 md:mt-4  ">
+   <li class="list-outside" *ngFor="let items of foods.recipe.ingredientLines">{{items}}</li>
+</div>
+<div class=" flex text-2xl justify-center">
+  <h1>Details</h1>
+</div>
+  <div class="flex items-center justify-start gap-2 md:pl-11">
+    <span class="my-4 text-base font-semibold w-fit">Cuisine type →</span>
+    <p class="text-xl" *ngFor="let itemC of foods.recipe.cuisineType"> {{itemC}}</p>
+  </div>
+  <div class="flex items-center justify-start md:pl-11">
+    <span class="my-4 text-base font-semibold w-fit">Meal type →</span>
+    <p class="text-xl">{{foods.recipe.mealType[0]}}</p>
+
+  </div>
+  <div class=" flex text-2xl justify-center">
+    <button class=" text-2xl">
+      <a href="{{ foods.recipe.url }}">How to Cook ? <span class="font-semibold text-blue-400">Click
+          Here!</span></a>
+    </button>
+  </div>
+  <div class="flex justify-center">
+    <button class="text-white bg-blue-700 mt-12 rounded-xl w-1/5 text-2xl p-3" routerLink="/">
+      Back to Home
+    </button>
+  </div>
+          </div>
+        </div>
+      </div>
+      </div>

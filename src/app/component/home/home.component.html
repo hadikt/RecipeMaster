@@ -1,0 +1,65 @@
+
+<div class="flex flex-col items-center h-screen gap-2 overflow-y-auto ">
+ <div class="flex items-center h-16 w-full md:h-20 p-4 bg-green-100">
+  <div class="">
+  <img class="md:w-36 w-28" src="../../../assets/backgroundremover.png" alt="">
+</div>
+  <div class="flex items-center justify-center align-middle w-full">
+    <h1 class="md:text-3xl text-xl font-serif">Recipe Master</h1>
+
+  </div>
+ </div>
+  <div class="flex flex-wrap justify-center p-6 mx-auto md:px-12 font-serif">
+<div class="flex item justify-center  ring-1 rounded-3xl mb-4">
+  <input  type="search" #input
+        class="border-none p-[1.2rem] text-[1.1rem] font-medium outline-none h-8 w-[11rem] md:w-[22rem] text-gray-900 rounded-l-[10rem] "
+        placeholder="Search foods..." required>
+      <button (click)="foods(input.value)"
+        class="text-slate-950  w-[5rem] text-[1rem] rounded-r-[10rem] border-none bg-green-100  outline-none hover:opacity-[0.8] cursor-pointer ">Search</button>
+      </div>
+
+      <!--  -->
+
+      <div class="flex flex-wrap items-center relative content-start justify-center w-full h-full gap-2 mx-auto scroll-mb-6 sm:gap-5 md:gap-9">
+
+<div [routerLink]="['food',item._links.self.href]" *ngFor="let item of data">
+
+  <section
+  class="flex flex-col overflow-hidden text-[#2D242] bg-gray-50  rounded-md shadow-xl min-w-full sm:min-w-fit sm:max-w-fit max-h-[385px] sm:min-h-[385px] hover:opacity-[0.9] ">
+  <a>
+    <img src="{{item.recipe.image}}"  alt="placeholder"    class=" w-[16rem] h-[13rem] sm:min-w-[272px] sm:max-w-[272px] object-cover min-h-[195px] max-h-[195px] hover:ease-linear hover:scale-105">
+  </a>
+  <section class="flex flex-col leading-tight p-2 bg-secondary_bg md:p-4  w-[16rem] h-[4rem] sm:min-w-[272px] sm:max-w-[272px] sm:min-h-[199px] max-h-[199px]">
+    <div class="flex items-center justify-between leading-tight">
+      <h1 class="text-lg h-14 line-clamp-2">
+        <a class="no-underline md:text-2xl"  href="#">
+          {{item.recipe.label }}       </a>
+      </h1>
+
+    </div>
+    <div
+              class=" left-[0.9rem] md:text-lg pb-[0.2rem] px-0 text-orange-600 text-[1.1rem] w-fit inline-block t  mr-[0.3rem] -py-1">
+              <span> {{ item.recipe.totalDaily.ENERC_KCAL.quantity|number:'1.0-0' }}cal</span>
+
+            </div>
+            <div
+              class=" left-[0.9rem] pb-[0.3rem] px-0 text-[#414141] text-[1.1rem] w-fit inline-block t  mr-[0.3rem] py-[0.2rem] ]">
+              <span>{{item.recipe.mealType}}</span>
+            </div>
+            <div class="hidden sm:flex justify-between mt-[0.7rem] py-2 items-start">
+              <div
+                class="cook-time  w-fit rounded-[2rem] bg-slate-200 inline-block text-[0.9rem] text-gray-600 mr-[0.3rem] py-[0.2rem] px-[0.5rem]">
+                <span>🕐</span>{{item.recipe.totalTime}}min
+              </div>
+              <div
+                class=" left-[0.9rem] pb-[0.3rem] px-0 text-[#414141] text-[1.1rem] w-fit inline-block t  mr-[0.3rem] py-[0.2rem] ]">
+                <span> {{item.recipe.cuisineType}}</span>
+
+              </div>
+            </div>
+  </section>
+</section>
+</div>
+      </div>
+ </div>
+</div>
